@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>HS-Model</Name>
     <RootNamespace>HS-Model</RootNamespace>
+    <InterpreterId>Global|ContinuumAnalytics|Anaconda37-64</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,9 +23,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="HS_Model.py" />
+    <Compile Include="HS_Model2.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Loader.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="module2.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|Anaconda" />
+    <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
+    <InterpreterReference Include="Global|PythonCore|3.7-32" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="hate_speech.csv" />
+    <Content Include="labeled_data.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
